@@ -23,6 +23,6 @@ with open("Emissions.csv") as file:
 			continue
 		temp = temp + element
 
-	print(data["Albania"])
+	print(data)
 
 	file.close()
