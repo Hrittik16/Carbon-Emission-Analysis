@@ -3,25 +3,25 @@
 with open("Emissions.csv") as file:
 	f = file.read()
 	data = {}
-	temp = ""
-	curr = ""
+	new_string = ""
+	curr_string = ""
 	flag = 1
 	for element in f:
 		if element == ",":
 			if flag:
-				data[temp] = []
-				curr = temp
+				data[new_string] = []
+				curr_string = new_string
 				flag = 0
 			else:
-				data[curr].append(temp)
-			temp = ""
+				data[curr_string].append(new_string)
+			new_string = ""
 			continue
 		if element == "\n":
 			flag = 1
-			data[curr].append(temp)
-			temp = ""
+			data[curr_string].append(new_string)
+			new_string = ""
 			continue
-		temp = temp + element
+		new_string = new_string + element
 
 	print(data)
 
