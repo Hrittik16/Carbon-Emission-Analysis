@@ -1,11 +1,12 @@
 # Reading the csv file and storing the data in a dictionary
 
+data = {}
+new_string = ""
+curr_string = ""
+flag = 1
+
 with open("Emissions.csv") as file:
 	f = file.read()
-	data = {}
-	new_string = ""
-	curr_string = ""
-	flag = 1
 	for element in f:
 		if element == ",":
 			if flag:
@@ -25,19 +26,51 @@ with open("Emissions.csv") as file:
 
 	file.close()
 
+data[curr_string].append(new_string)
 
 
-print("All data from Emissions.csv has been read into a dictionary.")
+# User Input
 
-#year = input("Select a year to find statistics (1997 to 2010): ")
-
-
-print(data)
-
+print("All data from Emissions.csv has been read into a dictionary.\n")
+year = input("Select a year to find statistics (1997 to 2010): ")
+print()
 
 
+# Finding the index of the year
+
+index = data['CO2 per capita'].index(year)
 
 
+# Finding Min and Max and Average CO2 Emission Levels (CEL)
+
+cel_list = {}
+
+for key in data:
+	if key == 'CO2 per capita':
+		continue
+	cel_list[key] = float(data[key][index])
+
+min_cel = 1000000007.00
+max_cel = 0.00
+min_country = ""
+max_country = ""
+total = 0.00
+avg_cel = 0.00
+
+for item in cel_list:
+	if cel_list[item] < min_cel:
+		min_cel = cel_list[item]
+		min_country = item
+	if cel_list[item] > max_cel:
+		max_cel = cel_list[item]
+		max_country = item
+	total = total + cel_list[item]
+
+avg_cel = total/len(cel_list)
 
 
+# Displaying Information
 
+print(f"In {year}, countries with minimum and maximum CO2 emission levels were: \
+	{min_country} and {max_country} respectively.")
+print(f"Average CO2 emissions in {year} were {avg_cel}")
