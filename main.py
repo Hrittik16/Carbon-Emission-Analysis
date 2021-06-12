@@ -92,9 +92,10 @@ print("\n")
 country = input("Select the country to visualize: ")
 
 x = data['CO2 per capita']
-y = data[country]
+y_str = data[country]
+y = [float(item) for item in y_str]
 
-plt.plot(x, y, color='green', marker='o', linestyle='solid',linewidth=2, markersize=12)
+plt.plot(x, y, color='green', marker='o', linestyle='solid', linewidth=2, markersize=12)
 plt.xlabel("Year")
 plt.ylabel(f"Emissions in {country}")
 plt.title("Year vs Emissions in Capita")
