@@ -1,3 +1,5 @@
+import matplotlib.pyplot as plt
+
 # Reading the csv file and storing the data in a dictionary
 
 data = {}
@@ -73,4 +75,27 @@ avg_cel = total/len(cel_list)
 
 print(f"In {year}, countries with minimum and maximum CO2 emission levels were: \
 	{min_country} and {max_country} respectively.")
-print(f"Average CO2 emissions in {year} were {avg_cel}")
+print(f"Average CO2 emissions in {year} were {avg_cel}\n")
+
+
+# Visualizing Data
+
+print("Here's the list of countries: \n")
+num = 1
+for item in data:
+	if item == 'CO2 per capita':
+		continue
+	print(f"{num}. {item}", end="    ")
+	num += 1
+print("\n")
+
+country = input("Select the country to visualize: ")
+
+x = data['CO2 per capita']
+y = data[country]
+
+plt.plot(x, y, color='green', marker='o', linestyle='solid',linewidth=2, markersize=12)
+plt.xlabel("Year")
+plt.ylabel(f"Emissions in {country}")
+plt.title("Year vs Emissions in Capita")
+plt.show()
