@@ -103,8 +103,6 @@ plt.show()
 
 
 country1, country2 = input("\nWrite two comma-separated countries for which you want to visualize data: ").split(', ')
-print(country1)
-print(country2)
 
 
 x = data['CO2 per capita']
