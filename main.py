@@ -100,3 +100,23 @@ plt.xlabel("Year")
 plt.ylabel(f"Emissions in {country}")
 plt.title("Year vs Emissions in Capita")
 plt.show()
+
+
+country1, country2 = input("\nWrite two comma-separated countries for which you want to visualize data: ").split(', ')
+print(country1)
+print(country2)
+
+
+x = data['CO2 per capita']
+y1_str = data[country1]
+y1 = [float(item) for item in y1_str]
+y2_str = data[country2]
+y2 = [float(item) for item in y2_str]
+
+plt.plot(x, y1, color='green', label=country1, marker='o', linestyle='solid', linewidth=2, markersize=12)
+plt.plot(x, y2, color='blue', label=country2, marker='o', linestyle='solid', linewidth=2, markersize=12)
+plt.legend()
+plt.xlabel("Year")
+plt.ylabel(f"Emissions in ")
+plt.title("Year vs Emissions in Capita")
+plt.show()
