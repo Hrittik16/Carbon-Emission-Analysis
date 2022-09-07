@@ -11,4 +11,4 @@ pip install matplotlib
 
 ## Examples
 
-![India 2003](img/India_2003)
+![India 2003](/img/India_2003.png)
