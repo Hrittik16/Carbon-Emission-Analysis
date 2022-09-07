@@ -14,3 +14,7 @@ pip install matplotlib
 ![India 2003](/img/India.png)
 
 Description: Carbon Emission in India from 1997 to 2010
+
+![Norway Vs Germany](/img/NorwayVsGermany.png)
+
+Description: Carbon Emission in Norway Vs Germany
