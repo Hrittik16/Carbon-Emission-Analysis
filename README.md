@@ -12,3 +12,5 @@ pip install matplotlib
 ## Examples
 
 ![India 2003](/img/India_2003.png)
+
+Description: Carbon Emission in India from 1997 to 2010
