@@ -8,3 +8,7 @@ source env_name/Scripts/activate
 ```
 pip install matplotlib
 ```
+
+## Examples
+
+![India 2003](img/India_2003)
